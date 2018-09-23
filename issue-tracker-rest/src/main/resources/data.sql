@@ -1,0 +1,4 @@
+insert into issue (title, description, place, created_at, updated_at) values ('Betört monitor', 'A kijelző betört, a kristály elfolyt', 'PC02', CURRENT_TIMESTAMP(),  CURRENT_TIMESTAMP());
+insert into issue (title, description, place, created_at, updated_at) values ('kakaós Billentyűzet', 'A billentyűzetbe kakaó került', 'PC01', CURRENT_TIMESTAMP(),  CURRENT_TIMESTAMP());
+insert into issue (title, description, place, created_at, updated_at) values ('egér görgő', 'Az egér görgője elgurult', 'PC01', CURRENT_TIMESTAMP(),  CURRENT_TIMESTAMP());
+insert into issue (title, description, place, created_at, updated_at) values ('WIFI', 'Nem jó a WiFi', 'PC04', CURRENT_TIMESTAMP(),  CURRENT_TIMESTAMP());
