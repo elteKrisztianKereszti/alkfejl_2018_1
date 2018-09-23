@@ -44,7 +44,7 @@ public class Issue {
     @NotNull
     private String place;
     
-    @Column
+    @Column(updatable = false)
     @CreationTimestamp
     private LocalDateTime created_at;
     
