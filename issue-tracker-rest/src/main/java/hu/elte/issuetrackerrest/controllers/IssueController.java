@@ -48,10 +48,14 @@ public class IssueController {
     private AuthenticatedUser authenticatedUser;
     
     @GetMapping("")
-    @Secured({ "ROLE_ADMIN" })
     public ResponseEntity<Iterable<Issue>> getAll() {
-        User.Role role = authenticatedUser.getUser().getRole();
-        return ResponseEntity.ok(issueRepository.findAll());
+        User user = authenticatedUser.getUser();
+        User.Role role = user.getRole();
+        if (role.equals(User.Role.ROLE_ADMIN)) {
+            return ResponseEntity.ok(issueRepository.findAll());
+        } else {
+            return ResponseEntity.ok(issueRepository.findAllByUser(user));
+        }
     }
     
     @GetMapping("/{id}")
@@ -66,6 +70,8 @@ public class IssueController {
     
     @PostMapping("")
     public ResponseEntity<Issue> post(@RequestBody Issue issue) {
+        User user = authenticatedUser.getUser();
+        issue.setUser(user);
         Issue savedIssue = issueRepository.save(issue);
         return ResponseEntity.ok(savedIssue);
     }
