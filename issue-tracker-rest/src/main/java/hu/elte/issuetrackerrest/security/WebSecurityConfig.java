@@ -27,10 +27,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .csrf().disable()
             .authorizeRequests()
-                .antMatchers("/tasks/**").authenticated()//.hasRole("USER")
+                .antMatchers("/h2/**", "/users/register").permitAll()   // important!
+                .anyRequest().authenticated()
                 .and()
             .httpBasic()
                 .authenticationEntryPoint(getBasicAuthEntryPoint())
+                .and()
+            .headers()      // important!
+                .frameOptions().disable()
                 .and()
             .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);

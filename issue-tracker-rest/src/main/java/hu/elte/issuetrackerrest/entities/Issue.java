@@ -49,7 +49,7 @@ public class Issue {
     
     @Column
     @NotNull
-    private String place;
+    private String location;
     
     @Column(updatable = false)
     @CreationTimestamp
