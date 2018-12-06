@@ -5,6 +5,8 @@ insert into issue (user_id, title, description, location, created_at, updated_at
 insert into issue (user_id, title, description, location, created_at, updated_at) values (1, 'kakaos Billentyuzet', 'A billentyuzetbe kakao kerult', 'PC01', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 insert into issue (user_id, title, description, location, created_at, updated_at) values (2, 'eger gorgo', 'Az eger gorgoje elgurult', 'PC01', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 insert into issue (user_id, title, description, location, created_at, updated_at) values (2, 'WIFI', 'Nem jo a WiFi', 'PC04', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into issue (user_id, title, description, location, created_at, updated_at) values (2, 'DeleteMe01', 'Nem jo a WiFi', 'PC04', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into issue (user_id, title, description, location, created_at, updated_at) values (2, 'DeleteMe02', 'Nem jo a WiFi', 'PC04', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 insert into message (issue_id, text, created_at, updated_at) values (1, 'message11', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 insert into message (issue_id, text, created_at, updated_at) values (2, 'message21', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());

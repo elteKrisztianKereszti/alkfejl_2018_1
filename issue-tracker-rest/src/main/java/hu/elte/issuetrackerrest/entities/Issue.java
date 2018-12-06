@@ -41,7 +41,6 @@ public class Issue {
     private Integer id;
     
     @Column
-    @NotNull
     private String title;
     
     @Column
