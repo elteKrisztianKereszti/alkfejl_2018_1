@@ -27,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .csrf().disable()
             .authorizeRequests()
-                .antMatchers("/h2/**", "/users/register", "/issues/**", "/issues").permitAll()   // important!
+                .antMatchers("/h2/**", "/users/register").permitAll()   // important!
                 .anyRequest().authenticated()
                 .and()
             .httpBasic()
@@ -48,8 +48,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
-            .inMemoryAuthentication()
-            .withUser("user").password("$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..").roles("USER");
+            .userDetailsService(userDetailsService)
+            .passwordEncoder(passwordEncoder());
     }
     
     @Bean
