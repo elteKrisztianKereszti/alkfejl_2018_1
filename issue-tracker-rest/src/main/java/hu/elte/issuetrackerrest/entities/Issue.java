@@ -10,6 +10,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -43,6 +45,10 @@ public class Issue {
     @Column
     private String title;
     
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status status;
+    
     @Column
     private String description;
     
@@ -69,4 +75,8 @@ public class Issue {
     @ManyToMany
     @JoinTable
     private List<Label> labels;
+    
+    public enum Status {
+        NEW, INPROGRESS, RESOLVED, CLOSED
+    }
 }
